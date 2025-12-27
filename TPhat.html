@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web cá nhân - Võ Trường Phát</title>
+    <style>
+        /* 1. Reset & Global Styles */
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* 2. Header Nổi bật */
+        h1 {
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 30px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* 3. Menu Hiện đại */
+        .menu {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .menu button {
+            background: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu button:hover {
+            background-color: #ff6f61;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,111,97,0.4);
+        }
+
+        /* 4. Content - Glassmorphism */
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 30px;
+            min-height: 400px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: slideUp 0.6s ease-out;
+            line-height: 1.6;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 5. Chi tiết các thành phần */
+        img.avatar {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #4a148c;
+            border-left: 5px solid #ff6f61;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        .highlight {
+            color: #ff6f61;
+            font-weight: 800;
+            font-size: 1.1em;
+        }
+
+        .quote {
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 8px solid #ffeb3b;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+
+        ul { list-style: none; padding: 0; }
+        li {
+            background: #f3f4f6;
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        li:hover { transform: translateX(10px); background: #e0e7ff; }
+
+        a {
+            color: #3f51b5;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px dotted #3f51b5;
+        }
+        
+        /* Hình ảnh trong nội dung */
+        .featured-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>✨ My Personal Space ✨</h1>
+
+<div class="menu">
+    <button onclick="show('me')">👤 Bản thân</button>
+    <button onclick="show('class')">🏫 Lớp</button>
+    <button onclick="show('song')">🎵 Bài hát</button>
+    <button onclick="show('place')">🏞️ Danh lam</button>
+    <button onclick="show('subject')">💻 Môn học</button>
+    <button onclick="show('study')">📚 Web học</button>
+</div>
+
+<div class="content" id="content">
+    <img class="avatar" src="https://s120-ava-talk.zadn.vn/f/9/4/a/13/120/fb147d931f0340717dfc5c986d33eefc.jpg" alt="Võ Trường Phát">
+    <div style="text-align: center;">
+        <p><b>Họ và tên:</b> <span class="highlight">Võ Trường Phát</span></p>
+        <p><b>Lớp:</b> 12 Tin | <b>Trường:</b> THPT Chuyên Chu Văn An</p>
+    </div>
+
+    <p style="text-align: center; font-size: 1.1em;">
+        Chào mọi người! Mình là <b>Phát</b>. Là một học sinh chuyên Tin, mình có niềm đam mê mãnh liệt với các dòng code và công nghệ mới. 🚀
+    </p>
+
+    <h2>✨ Sở thích</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <li>💻 Lập trình ứng dụng</li>
+        <li>🎧 Chill cùng Music</li>
+        <li>🤖 Khám phá AI</li>
+        <li>⚽ Bóng đá cuối tuần</li>
+    </div>
+
+    <div class="quote">
+        "Học tập hôm nay – Thành công ngày mai"
+    </div>
+</div>
+
+<script>
+function show(type) {
+    let c = document.getElementById("content");
+    // Thêm hiệu ứng fade out/in khi chuyển tab
+    c.style.opacity = 0;
+    
+    setTimeout(() => {
+        if (type === "me") {
+            location.reload();
+        }
+
+        if (type === "class") {
+            c.innerHTML = `
+            <h2>🏫 Thông tin lớp 12 Tin</h2>
+            <p>👥 <b>Sĩ số:</b> 25 thành viên xuất sắc</p>
+            <p>👩‍🏫 <b>GVCN:</b> Cô Trần Đoàn Trang</p>
+            <h3>Ban cán sự lớp:</h3>
+            <ul>
+                <li>👑 <b>Lữ Tùng Chi</b> – Lớp trưởng</li>
+                <li>✨ <b>Ngô Ngọc Bích</b> – Lớp phó</li>
+                <li>🧹 <b>Phan Hoàng Phát</b> - Lớp phó lao động</li>
+            </ul>
+            <div class="quote" style="border-color: #4caf50; background: #e8f5e9;">
+                💪 Đoàn kết – Trách nhiệm – Sáng tạo
+            </div>`;
+        }
+
+        if (type === "song") {
+            c.innerHTML = `
+            <h2>🎵 Bài hát yêu thích</h2>
+            <p><b>From The Start</b> – <i>Laufey</i></p>
+            <img src="https://i.ytimg.com/vi/lSD_L-xic9o/hq720.jpg" class="featured-img">
+            <div style="text-align:center; margin-top:20px;">
+                <a href="https://www.youtube.com/watch?v=lSD_L-xic9o" target="_blank" style="background:#ff6f61; color:white; padding:10px 20px; border-radius:50px; border:none;">▶ Thưởng thức ngay</a>
+            </div>`;
+        }
+
+        if (type === "place") {
+            c.innerHTML = `
+            <h2>🏞️ Danh lam thắng cảnh</h2>
+            <h3>Vịnh Hạ Long</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Halong_Bay_in_Vietnam.jpg/500px-Halong_Bay_in_Vietnam.jpg" class="featured-img">
+            <p style="text-align:center">Kỳ quan thiên nhiên thế giới - Niềm tự hào của Việt Nam.</p>`;
+        }
+
+        if (type === "subject") {
+            c.innerHTML = `
+            <h2>💻 Môn học đam mê</h2>
+            <p>Không gì khác ngoài <b>Tin Học</b>!</p>
+            <ul>
+                <li>🚀 <b>Algorithm:</b> Thử thách tư duy logic.</li>
+                <li>🌐 <b>Web Dev:</b> Sáng tạo không gian số.</li>
+                <li>📱 <b>App:</b> Giải quyết các vấn đề thực tế.</li>
+            </ul>`;
+        }
+
+        if (type === "study") {
+            c.innerHTML = `
+            <h2>📚 Tài nguyên học tập</h2>
+            <p>Những trang web giúp mình tiến bộ mỗi ngày:</p>
+            <ul>
+                <li>🌐 <a href="https://vi.wikipedia.org" target="_blank">Wikipedia</a> - Kho tàng kiến thức.</li>
+                <li>📖 <a href="https://hocmai.vn" target="_blank">Hocmai.vn</a> - Ôn luyện thi cử.</li>
+                <li>🎓 <a href="https://www.khanacademy.org" target="_blank">Khan Academy</a> - Học liệu quốc tế.</li>
+                <li>👨‍💻 <a href="https://leetcode.com" target="_blank">LeetCode</a> - Luyện code (Cho dân Chuyên Tin).</li>
+            </ul>`;
+        }
+        
+        c.style.opacity = 1;
+    }, 200);
+}
+</script>
+
+</body>
+</html>
